@@ -1,5 +1,7 @@
 # Webpack starter
 
+  Inspired by James K Nelsons "webpack-black-triangle"
+
 ## Technologies
 
   - Gulp
@@ -17,6 +19,7 @@
   - Compiles your React in bundle.js
   - Extracts your compiled css into main.css
   - Injects bundle.js and main.css references in to index.html
+  - Uses karma to run your specs
 
 ## Entry points
 

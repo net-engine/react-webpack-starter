@@ -1,6 +1,6 @@
 {
-  "name": "webpack-black-triangle-sass",
-  "version": "0.1.0",
+  "name": "react-webpack-starter",
+  "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
   "dependencies": {
@@ -47,6 +47,6 @@
     "build": "gulp webpack",
     "test": "karma start"
   },
-  "author": "James K Nelson <james@jamesknelson.com>",
+  "author": "Net Engine",
   "license": "MIT"
 }

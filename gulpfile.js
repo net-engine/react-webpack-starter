@@ -4,16 +4,17 @@ var webpack           = require("webpack");
 var webpackStream     = require("webpack-stream");
 var WebpackDevServer  = require("webpack-dev-server");
 
-var webpackConfig     = require('./webpack.config.js');
+var webpackDevelopmentConfig = require('./webpack.dev.config.js');
+var webpackProductionConfig  = require('./webpack.prod.config.js');
 
 gulp.task('webpack', function(callback) {
   gulp.src('src/main.js')
-    .pipe(webpackStream( webpackConfig ))
+    .pipe(webpackStream( webpackProductionConfig ))
     .pipe(gulp.dest('dist/'));
 });
 
 gulp.task("webpack-dev-server", function(callback) {
-  var myConfig = Object.create(webpackConfig);
+  var myConfig = Object.create(webpackDevelopmentConfig);
 
   new WebpackDevServer(webpack(myConfig), {
     stats: {
@@ -21,7 +22,6 @@ gulp.task("webpack-dev-server", function(callback) {
     }
   }).listen(8080, "localhost", function(err) {
     if(err) throw new gutil.PluginError("webpack-dev-server", err);
-    // Server listening
     gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html");
 
     // keep the server alive or continue?
